@@ -22,10 +22,11 @@ public class Voiture {
     public static class BuilderVoiture implements IBuilderVoiture {
         private final EVoiture type;
         private final List<EVoitureOptions> options = new ArrayList<>();
-        private boolean construit = false;
+        private boolean construit;
 
         public BuilderVoiture(EVoiture type) {
             this.type = type;
+            construit = false;
         }
 
         @Override
@@ -42,7 +43,7 @@ public class Voiture {
 
         @Override
         public Voiture build() {
-            return new Voiture(this);
+            return new Voiture(this );
         }
     }
 }
